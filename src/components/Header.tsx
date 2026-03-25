@@ -10,14 +10,14 @@ const Header = () => {
       transition={{ duration: 0.5 }}
       className="hero-gradient sticky top-0 z-40 shadow-lg"
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2 md:py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
+            <img
               src={LOGO_URL}
-              alt="Grupo Serpos" 
-              className="h-14 object-contain drop-shadow-md"
+              alt="Grupo Serpos"
+              className="h-16 md:h-20 w-auto object-contain drop-shadow-md"
             />
           </div>
           
@@ -33,7 +33,7 @@ const Header = () => {
             </a>
           </nav>
           
-          <a href="https://app.serpos.com.br/" target="_blank" rel="noopener noreferrer" className="btn-gold text-sm hidden md:block">
+          <a href="https://app.serpos.com.br/" target="_blank" rel="noopener noreferrer" className="btn-gold text-xs px-3 py-2 md:text-sm md:px-6 md:py-3">
             Área do Associado
           </a>
         </div>

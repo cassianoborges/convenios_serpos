@@ -52,16 +52,25 @@ const Footer = () => {
           
           {/* Contact */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold text-white mb-4">Contato</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-white mb-4">Onde Estamos</h4>
+            <ul className="space-y-3">
               <li className="text-sm text-white/70">
-                📍 Rua Acácia, 24 - Goiânia, GO
+                <span className="block font-medium text-white/90">Sede:</span>
+                Av. 1ª Radial, 621, QD 18, LT 14/15<br />
+                Pedro Ludovico, 74820-300<br />
+                Goiânia/GO
               </li>
               <li className="text-sm text-white/70">
-                📞 (62) 3532-5661
+                <span className="block font-medium text-white/90">Endereço das Unidades:</span>
+                <a href="https://serpos.com.br/unidades/" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold/80 transition-colors">
+                  confira aqui
+                </a>
               </li>
               <li className="text-sm text-white/70">
-                🕐 Seg - Sex: 8h às 18h
+                <span className="block font-medium text-white/90">Funcionamento:</span>
+                Segunda a sexta: 8h às 18h<br />
+                Sábado: 8h às 12h<br />
+                Atendimento Funerário: 24h
               </li>
             </ul>
           </div>

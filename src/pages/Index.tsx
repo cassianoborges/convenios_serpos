@@ -148,7 +148,7 @@ const Index = () => {
             <div className="text-center py-16">
               <p className="text-4xl mb-4">⚠️</p>
               <h4 className="text-lg font-semibold text-foreground mb-2">Erro ao carregar convênios</h4>
-              <p className="text-muted-foreground">Verifique se o servidor está rodando em localhost:3001</p>
+              <p className="text-muted-foreground">Verifique se o servidor está rodando em localhost:3004</p>
             </div>
           )}
 

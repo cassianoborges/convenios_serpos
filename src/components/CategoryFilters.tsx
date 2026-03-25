@@ -17,10 +17,10 @@ const CategoryFilters = ({ selectedCategory, onSelect }: CategoryFiltersProps) =
       id="categorias"
       className="w-full"
     >
-      <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+      <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:gap-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <button
           onClick={() => onSelect(null)}
-          className={`category-chip border ${
+          className={`category-chip border flex-shrink-0 ${
             selectedCategory === null
               ? 'bg-primary text-primary-foreground border-primary'
               : 'bg-card text-foreground border-border hover:border-primary/50'
@@ -37,7 +37,7 @@ const CategoryFilters = ({ selectedCategory, onSelect }: CategoryFiltersProps) =
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.1 * index }}
             onClick={() => onSelect(selectedCategory === category.id ? null : category.id)}
-            className={`category-chip border ${
+            className={`category-chip border flex-shrink-0 ${
               selectedCategory === category.id
                 ? 'bg-primary text-primary-foreground border-primary'
                 : `${category.color} hover:opacity-80`

@@ -43,16 +43,16 @@ const PartnerModal = ({ partner, isOpen, onClose }: PartnerModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
           >
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-lg bg-card rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[90vh] overflow-y-auto"
+            className="w-full sm:max-w-lg bg-card rounded-t-2xl sm:rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[92vh] sm:max-h-[90vh] overflow-y-auto overscroll-contain"
           >
             {/* Header Image */}
             <div className="relative h-48 md:h-56">
@@ -86,11 +86,13 @@ const PartnerModal = ({ partner, isOpen, onClose }: PartnerModalProps) => {
               </button>
               
               {/* Discount Badge */}
-              <div className="absolute bottom-4 right-4">
-                <span className="discount-badge text-lg px-4 py-2">
-                  -{partner.porcentagem_desconto}% OFF
-                </span>
-              </div>
+              {partner.porcentagem_desconto > 1 && (
+                <div className="absolute bottom-4 right-4">
+                  <span className="discount-badge text-lg px-4 py-2">
+                    -{partner.porcentagem_desconto}% OFF
+                  </span>
+                </div>
+              )}
               
               {/* Category */}
               <div className="absolute bottom-4 left-4">
@@ -101,7 +103,7 @@ const PartnerModal = ({ partner, isOpen, onClose }: PartnerModalProps) => {
             </div>
             
             {/* Content */}
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               <h2 className="text-2xl font-bold text-foreground mb-2">
                 {partner.nome}
               </h2>

@@ -47,11 +47,13 @@ const PartnerCard = ({ partner, onClick, index }: PartnerCardProps) => {
         </div>
         
         {/* Discount Badge */}
-        <div className="absolute top-3 right-3">
-          <span className="discount-badge">
-            -{partner.porcentagem_desconto}%
-          </span>
-        </div>
+        {partner.porcentagem_desconto > 1 && (
+          <div className="absolute top-3 right-3">
+            <span className="discount-badge">
+              -{partner.porcentagem_desconto}%
+            </span>
+          </div>
+        )}
         
         {/* Category Badge */}
         <div className="absolute top-3 left-3">

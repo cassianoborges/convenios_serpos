@@ -21,7 +21,7 @@ const SearchBar = ({ value, onChange }: SearchBarProps) => {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Buscar parceiro ou categoria..."
-          className="w-full pl-12 pr-12 py-4 text-base rounded-xl border border-border bg-card shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+          className="w-full pl-12 pr-12 py-4 text-base rounded-xl border border-border bg-card shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all [font-size:16px]"
         />
         {value && (
           <button 
