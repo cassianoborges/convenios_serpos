@@ -119,7 +119,7 @@ module.exports = {
       name: 'serpos-frontend',
       script: 'serve',
       interpreter: 'none',
-      args: '-s dist -l 80',
+      args: '-s dist -l 8081',
       cwd: '/var/www/convenios_serpos',
       instances: 1,
       autorestart: true,
@@ -230,10 +230,10 @@ pm2 restart all
 
 | Serviço          | Porta | Acesso                        |
 |------------------|-------|-------------------------------|
-| Frontend (serve) | 80    | http://IP_DA_VPS              |
+| Frontend (serve) | 8081  | http://IP_DA_VPS:8081         |
 | Backend (API)    | 3004  | http://IP_DA_VPS:3004/api     |
-| Admin            | 80    | http://IP_DA_VPS/admin        |
-| Login            | 80    | http://IP_DA_VPS/login        |
+| Admin            | 8081  | http://IP_DA_VPS:8081/admin   |
+| Login            | 8081  | http://IP_DA_VPS:8081/login   |
 
 ---
 
@@ -241,7 +241,7 @@ pm2 restart all
 
 - **Firewall:** libere as portas 80 e 3004 na VPS.
   ```bash
-  sudo ufw allow 80
+  sudo ufw allow 8081
   sudo ufw allow 3004
   sudo ufw enable
   ```

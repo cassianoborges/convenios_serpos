@@ -16,7 +16,7 @@ module.exports = {
       name: 'serpos-frontend',
       script: 'serve',
       interpreter: 'none',
-      args: '-s dist -l 80',
+      args: '-s dist -l 8081',
       cwd: '/var/www/convenios_serpos',
       instances: 1,
       autorestart: true,
