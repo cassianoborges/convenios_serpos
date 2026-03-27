@@ -5,7 +5,7 @@ import {
     LayoutDashboard, Handshake, Building2, LogOut, ChevronRight, ExternalLink, BarChart2, Users, Tag
 } from 'lucide-react';
 
-const LOGO_URL = 'https://serpos.com.br/wp-content/uploads/2024/10/logo-grupo-serpos.png.webp';
+import logoSerpos from '@/assets/logo_serpos.jpeg';
 import { useAuth } from '@/context/AuthContext';
 import { ConvenioTable } from '@/components/admin/ConvenioTable';
 import { UnidadeManager } from '@/components/admin/UnidadeManager';
@@ -50,7 +50,7 @@ const Admin = () => {
             <aside className="fixed left-0 top-0 h-full w-64 bg-slate-900 border-r border-slate-800 z-40 hidden lg:flex flex-col">
                 {/* Logo */}
                 <div className="p-5 border-b border-slate-800 flex justify-center">
-                    <img src={LOGO_URL} alt="Grupo Serpos" className="h-10 object-contain brightness-200" />
+                    <img src={logoSerpos} alt="Grupo Serpos" className="h-10 object-contain" />
                 </div>
 
                 {/* Nav */}

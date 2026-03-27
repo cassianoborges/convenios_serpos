@@ -1,6 +1,5 @@
-const LOGO_URL = 'https://serpos.com.br/wp-content/uploads/2024/10/logo-grupo-serpos.png.webp';
-
 import { motion } from 'framer-motion';
+import logoSerpos from '@/assets/logo_serpos.jpeg';
 
 const Header = () => {
   return (
@@ -15,9 +14,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src={LOGO_URL}
+              src={logoSerpos}
               alt="Grupo Serpos"
-              className="h-16 md:h-20 w-auto object-contain drop-shadow-md"
+              className="h-20 w-20 md:h-28 md:w-28 rounded-full bg-white p-1 object-contain drop-shadow-md"
             />
           </div>
           

@@ -5,7 +5,7 @@ import { Lock, Mail, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { toast } from 'sonner';
 
-const LOGO_URL = 'https://serpos.com.br/wp-content/uploads/2024/10/logo-grupo-serpos.png.webp';
+import logoSerpos from '@/assets/logo_serpos.jpeg';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ const Login = () => {
                 {/* Logo / Header */}
                 <div className="text-center mb-8">
                     <div className="flex justify-center mb-4">
-                        <img src={LOGO_URL} alt="Grupo Serpos" className="h-16 object-contain" />
+                        <img src={logoSerpos} alt="Grupo Serpos" className="h-16 object-contain" />
                     </div>
                     <p className="text-slate-400 text-sm">Painel de Gerenciamento de Convênios</p>
                 </div>

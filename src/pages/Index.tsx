@@ -17,6 +17,7 @@ const Index = () => {
   useUTM(); // inicializa e persiste UTMs da URL
   const { track } = useTracking();
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [selectedUnidadeId, setSelectedUnidadeId] = useState<number | undefined>(undefined);
   const [selectedPartner, setSelectedPartner] = useState<Partner | null>(null);
@@ -26,20 +27,23 @@ const Index = () => {
   // Rastreia page_view uma vez ao carregar
   useEffect(() => { track('page_view'); }, []);
 
-  // Rastreia busca com debounce (só dispara após parar de digitar)
+  // Debounce: atualiza a busca real 400ms após parar de digitar
+  // e dispara o evento de analytics após 1500ms
   useEffect(() => {
-    if (!searchQuery) return;
     if (searchTimer.current) clearTimeout(searchTimer.current);
+
     searchTimer.current = setTimeout(() => {
-      track('search', { valor: searchQuery });
-    }, 1500);
+      setDebouncedSearch(searchQuery);
+      if (searchQuery) track('search', { valor: searchQuery });
+    }, 400);
+
     return () => { if (searchTimer.current) clearTimeout(searchTimer.current); };
   }, [searchQuery]);
 
   const { data: partnersData, isLoading, isError } = usePartners({
     categoria: selectedCategory ?? undefined,
     unidade_id: selectedUnidadeId,
-    busca: searchQuery || undefined,
+    busca: debouncedSearch || undefined,
   });
 
   const { data: unidades } = useUnidades();

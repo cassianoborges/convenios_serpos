@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    window.open('https://wa.me/556235325661?text=Olá! Preciso de ajuda com os convênios Grupo Serpos.', '_blank');
+    window.open('https://wa.me/556296295109?text=Olá! Preciso de ajuda com os convênios Grupo Serpos.', '_blank');
   };
 
   return (

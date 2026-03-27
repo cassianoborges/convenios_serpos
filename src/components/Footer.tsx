@@ -1,4 +1,4 @@
-import logoSerpos from '@/assets/logo-serpos.png';
+import logoSerpos from '@/assets/logo_serpos.jpeg';
 
 const Footer = () => {
   return (

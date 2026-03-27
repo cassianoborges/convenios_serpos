@@ -1,6 +1,5 @@
-const SERPOS_LOGO = 'https://serpos.com.br/wp-content/uploads/2024/10/logo-grupo-serpos.png.webp';
-
 import { motion } from 'framer-motion';
+import serposLogo from '@/assets/logo_cads.webp';
 import { MapPin, Phone } from 'lucide-react';
 import { Partner } from '@/types/partner';
 import { useCategorias, getCategoryInfo } from '@/hooks/useCategorias';
@@ -31,14 +30,14 @@ const PartnerCard = ({ partner, onClick, index }: PartnerCardProps) => {
               alt={partner.nome}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = SERPOS_LOGO;
+                (e.currentTarget as HTMLImageElement).src = serposLogo;
                 e.currentTarget.className = 'w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-110';
               }}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-muted/60">
               <img
-                src={SERPOS_LOGO}
+                src={serposLogo}
                 alt="Serpos"
                 className="w-3/4 h-3/4 object-contain opacity-60"
               />
